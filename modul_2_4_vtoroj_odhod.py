@@ -1,17 +1,20 @@
+
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 primes = []
 not_primes = []
-for i in range(len(numbers)):
+for numb in numbers:
+    if numb == 1:
+        continue
     is_prime = True
-    if numbers[i] > 1:
-        for j in range(2, numbers[i]):
-            if numbers[i] % j == 0:
-                is_prime = False
+    for i in range(2, numb):
+        if numb % i == 0:
+            is_prime = False
             break
-        if is_prime:
-            primes.append(numbers[i])
-        else:
-            not_primes.append(numbers[i])
+    if is_prime:
+        primes.append(numb)
+    else:
+        not_primes.append(numb)
 
 print("Простые числа:", primes)
 print("Не простые числа:", not_primes)
+
